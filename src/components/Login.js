@@ -4,6 +4,7 @@ import React from 'react';
 import Button from "@material-ui/core/Button"
 
 import TextField from "@material-ui/core/TextField";
+import { useHistory } from 'react-router';
 
 
 import { useState } from 'react';
@@ -19,16 +20,17 @@ export default function Login({setUser,user}) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [displayLogin, setDisplayLogin] = useState(false);
+    let history = useHistory();
 
    
 
     const handleSubmit = (e) => {
-        e.preventDefault();
+       e.preventDefault();
 
-        const newUser = {
+       const newUser = {
          
-          email,
-          password
+        email,
+        password
           
         };
 
@@ -48,10 +50,15 @@ export default function Login({setUser,user}) {
       setDisplayLogin(!displayLogin);
     }
 
-   if(user)
-   return (
-     <Redirect to="/languages" />
-   )
+
+    function handleClick() {
+      history.push("/languages");
+    }
+  
+  //  if(user)
+  //  return (
+  //    <Redirect to="/languages" />
+  //  )
 
    
 
@@ -61,37 +68,38 @@ export default function Login({setUser,user}) {
       <h4 className="login-h">Click here to <span onClick={onClick}>Login </span> if don't have account please Sign up here</h4>
       
       { displayLogin && (
-         <form  onSubmit={handleSubmit}>
-         <div className="form-div"> 
-           <TextField
+        <form  onSubmit={handleSubmit}>
+        <div className="form-div"> 
+        <TextField
         id="filled-basic"
         label="Email"
         variant="filled"
-         value={email}
-         onChange={(e) => setEmail(e.target.value)}
-            className="email-textfield"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        className="email-textfield"
         style={{ marginBottom: "20px",marginTop:"20px", width:"300px", height:"50px"}}
         />
-          <TextField
-       id="filled-basic"
-       label="Password"
-       variant="filled"
-       value={password}
-       onChange={(e) => setPassword(e.target.value)}
-           style={{ marginBottom: "20px",marginTop:"20px", width:"300px"}}
+        <TextField
+        id="filled-basic"
+        label="Password"
+        variant="filled"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        style={{ marginBottom: "20px",marginTop:"20px", width:"300px"}}
        />
              
-         <Button  type="submit"
-         variant="contained"   
-          style={{ color: "teal",backgroundColor:"#9AD4E4", width:"300px" }} >
-     Log In</Button>
+        <Button  type="submit"
+        variant="contained"   
+        onClick={handleClick}
+        style={{ color: "teal",backgroundColor:"#9AD4E4", width:"300px" }} >
+        Log In</Button>
  
-         </div>
-         </form>
+        </div>
+        </form>
 
       )}
 
        
-        </div>
+   </div>
     )
 }

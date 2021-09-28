@@ -10,6 +10,9 @@ import Signup from './components/Signup';
 import Languages from './components/Languages';
 import Profile from './components/Profile';
 import Friends from './components/Friends';
+import Chat from './components/video-chat/Chat'
+
+
 import Footer from './components/Footer';
 import { SettingsInputSvideoRounded } from '@material-ui/icons';
 
@@ -42,7 +45,10 @@ function App() {
        </Route>
        <Route  path="/languages" component={Languages} />
        <Route  path="/friends" component={Friends} />
-       <Route  path="/profile" component={Profile} />
+       {/* <Route  path="/profile" component={Profile} /> */}
+
+       <Route  path="/profile" component={Chat} />
+
       </Switch>
 
       <footer>
