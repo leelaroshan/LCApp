@@ -35,7 +35,7 @@ export default function Login({setUser,user}) {
         };
 
         axios
-        .post("http://localhost:5000/users/login", newUser)
+        .post("https://thawing-dawn-59246.herokuapp.com/users/login", newUser)
         .then((res) => {
          setUser(res.data);
         }).catch((err)=> console.log(err, err.response));

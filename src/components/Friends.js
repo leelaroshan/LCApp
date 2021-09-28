@@ -10,7 +10,7 @@ export default function Friends() {
 
     useEffect(()=>{
     axios
-    .get("http://localhost:5000/users")
+    .get("https://thawing-dawn-59246.herokuapp.com/users")
     .then((res)  => {
         
         setFriends(res.data.data)

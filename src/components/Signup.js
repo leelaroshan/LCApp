@@ -42,7 +42,7 @@ export default function Signup({user,setUser}) {
 
     useEffect(() => {
       axios
-      .get('http://localhost:5000/levels')
+      .get('https://thawing-dawn-59246.herokuapp.com/levels')
       .then(res => setLevels(res.data.data.sort((a, b) => {
         return a.step - b.step;
       })))
@@ -60,7 +60,7 @@ export default function Signup({user,setUser}) {
         };
         console.log(newUser)
     axios
-        .post("http://localhost:5000/users", newUser)
+        .post("https://thawing-dawn-59246.herokuapp.com/users", newUser)
         .then((res) => {
           setUser(res.data);
         }).catch((err)=> console.log(err, err.response));
