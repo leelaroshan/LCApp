@@ -1,0 +1,41 @@
+
+
+
+.big-container h3{
+    padding-top: 30px;
+}
+.user-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 75%;
+
+}
+
+.user-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 350px;
+    height: 250px;
+    border: 1px solid gray;
+    padding-bottom: 20px;
+    margin:20px;
+}
+
+.profile-img{
+    width:80px;
+    height:80px;
+
+}
+
+
+.connect-btn{
+    width: 100px;
+    height: 50px;
+    border-radius: 50%;
+
+}

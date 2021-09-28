@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.Nav-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+    background-color: #1F4E5A;
+    color:white
+    
+}
+.social-media{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    /* align-items: center; */
+}
+
+.logo{
+    width: 150px;
+    height:150px;
+}

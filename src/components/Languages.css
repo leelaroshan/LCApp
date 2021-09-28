@@ -1,0 +1,66 @@
+
+
+.background{
+   
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+    /* background-color: #9AD4E4; */
+   
+     /* text-align: center; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    
+    */
+}
+
+.community-heading{
+    padding: 20px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.card{
+    
+    width: 250px;
+    height: 250px;
+    background-color:#9AD4E4; 
+     border:1px solid lightseagreen;
+    color:black;
+    margin-bottom: 50px;
+   
+  
+} 
+
+.card-div{
+    display:flex;
+    flex-direction: column;
+
+
+}
+
+
+.card h3{
+    padding:20px;
+
+}
+.card-img{
+padding-bottom:20px;
+}
+
+.readbtn{
+    width:70px;
+    height:70px;
+   
+    text-align: center;
+    cursor: pointer;
+    /* outline: none; */
+    border-radius: 50%;
+    background-color:lightseagreen;
+    border-color:#1F4E5A;
+}
