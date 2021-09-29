@@ -14,19 +14,13 @@ import Chat from './components/video-chat/Chat'
 
 
 import Footer from './components/Footer';
-import { SettingsInputSvideoRounded } from '@material-ui/icons';
+// import { SettingsInputSvideoRounded } from '@material-ui/icons';
 
 
 
 function App() {
 
   const [user, setUser] = useState();
-
-
-
-
-
-
 
 
 
@@ -45,9 +39,12 @@ function App() {
        </Route>
        <Route  path="/languages" component={Languages} />
        <Route  path="/friends" component={Friends} />
+       <Route exact path="/profile" >
+        <Profile setUser= {setUser} user={user}/>
+       </Route>
        {/* <Route  path="/profile" component={Profile} /> */}
 
-       <Route  path="/profile" component={Chat} />
+       <Route  path="/chat" component={Chat} />
 
       </Switch>
 

@@ -12,8 +12,8 @@ import './Signup.css';
 
 import { Redirect } from 'react-router';
 
-// import IconButton from "@material-ui/core/IconButton"
-// import AssignmentIcon from "@material-ui/icons/Assignment"
+
+
 
 
 
@@ -99,6 +99,9 @@ export default function Signup({user,setUser}) {
       setLanguages(newLanguages)
     };
 
+
+
+
     console.log(languages)
 
 
@@ -118,12 +121,12 @@ export default function Signup({user,setUser}) {
     <div className="form-container"> 
 
      <TextField
-		 id="filled-basic"
+		 id="username"
 		 label="User name"
 		 variant="filled"
 		 value={userName}
 		 onChange={(e) => setUserName(e.target.value)}
-     className="username-textfield"
+     
 		style={{ marginBottom: "20px",marginTop:"20px", width:"300px", height:"50px"}}
 		/>
 
@@ -133,14 +136,14 @@ export default function Signup({user,setUser}) {
 		variant="filled"
 		value={email}
 		onChange={(e) => setEmail(e.target.value)}
-        className="email-textfield"
+    className="email-textfield"
 		style={{ marginBottom: "20px",marginTop:"20px", width:"300px", height:"50px"}}
 		/>
 
-     <TextField
-		
+    <TextField
 		label="Password"
 		variant="filled"
+    type="password"
 		value={password}
 		onChange={(e) => setPassword(e.target.value)}
     style={{ marginBottom: "20px",marginTop:"20px", width:"300px"}}
@@ -204,7 +207,7 @@ export default function Signup({user,setUser}) {
             
         <Button type="submit"
         variant="contained"   
-         style={{ color: "#1F4E5A",backgroundColor:"#9AD4E4", width:"300px" }} >
+         style={{ color: "#1F4E5A",backgroundColor:"#5CE1E6", width:"300px" }} >
 		Sign Up</Button>
 
         </div>

@@ -9,10 +9,11 @@ import { useHistory } from 'react-router';
 
 import { useState } from 'react';
 import axios from 'axios';
+import {Link} from "react-router-dom";
 import { Redirect } from 'react-router';
 
 import './Login.css';
-import Languages from './Languages';
+
 
 export default function Login({setUser,user}) {
 
@@ -34,10 +35,14 @@ export default function Login({setUser,user}) {
           
         };
 
+        console.log("hey user");
+
         axios
         .post("https://thawing-dawn-59246.herokuapp.com/users/login", newUser)
         .then((res) => {
-         setUser(res.data);
+         setUser(res.data.data);
+         history.push("/languages");
+         console.log("login " , res.data);
         }).catch((err)=> console.log(err, err.response));
   
      
@@ -51,9 +56,7 @@ export default function Login({setUser,user}) {
     }
 
 
-    function handleClick() {
-      history.push("/languages");
-    }
+   
   
   //  if(user)
   //  return (
@@ -65,10 +68,11 @@ export default function Login({setUser,user}) {
     return (
     <div className="login-container">
       <h2 className="heading2">Welcome to the Language community</h2>
-      <h4 className="login-h">Click here to <span onClick={onClick}>Login </span> if don't have account please Sign up here</h4>
+      <h4 className="login-h">Click here to <span onClick={onClick}>Login </span>
+       if don't have account please <Link to="/signup" > Sign up</Link> here</h4>
       
       { displayLogin && (
-        <form  onSubmit={handleSubmit}>
+        <form  >
         <div className="form-div"> 
         <TextField
         id="filled-basic"
@@ -90,8 +94,8 @@ export default function Login({setUser,user}) {
              
         <Button  type="submit"
         variant="contained"   
-        onClick={handleClick}
-        style={{ color: "teal",backgroundColor:"#9AD4E4", width:"300px" }} >
+        onClick={handleSubmit}
+        style={{ color: "teal",backgroundColor:"#5CE1E6", width:"300px" }} >
         Log In</Button>
  
         </div>

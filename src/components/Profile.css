@@ -1,0 +1,56 @@
+
+
+
+.profie-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+
+
+
+
+
+.profile-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 2px solid #9AD4E4;
+    background-color: whitesmoke;
+    
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+
+    /* margin-left: 500px;
+    width: 500px;
+    height: 700px;
+     */
+   
+    /* box-shadow: ; */
+}
+
+
+.user-img{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+
+.friends-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #9AD4E4;
+    margin:20px;
+
+}
+
+

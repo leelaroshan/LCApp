@@ -1,7 +1,8 @@
 import React, {useState,useEffect} from 'react';
 import './Friends.css';
 import axios from 'axios';
-import profilepic from './images/profilepic.png'
+import {Link} from 'react-router-dom';
+import profilepic from './images/profilepic.png';
 
 export default function Friends() {
 
@@ -38,15 +39,17 @@ export default function Friends() {
             src={profilepic} 
             alt="profilepic"
             className="profile-img" />
-            <h3 key={index}>{friend.userName} </h3> 
-            <hr />
+            <h4 key={index}>{friend.userName} </h4> 
+            <hr width="30%"/>
             <h5> Native: {friend.languages[0]?.name}</h5>
            {friend.languages.slice(1).map(language => {
            return  <h5>Practice languages: {language.name}</h5>
            })}
             {/* <h5>Practice Language: {friend.languages[1]?.name}</h5> */}
             <h6>Level: {friend.languages[0]?.level?.name}</h6>
+            <Link to= '/chat'> 
             <button className="connect-btn">Connect</button>
+            </Link>
             </div>
 
             </>

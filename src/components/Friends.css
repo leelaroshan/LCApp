@@ -24,18 +24,28 @@
     border: 1px solid gray;
     padding-bottom: 20px;
     margin:20px;
+   
 }
 
 .profile-img{
     width:80px;
     height:80px;
+    border-radius: 50%;
 
 }
+
 
 
 .connect-btn{
     width: 100px;
     height: 50px;
     border-radius: 50%;
+    border: 1px solid #5CE1E6;
 
 }
+
+.connect-btn:hover{
+    background-color: teal;
+    color:white;
+}
+
