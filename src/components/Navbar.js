@@ -18,8 +18,8 @@ export default function Navbar() {
      
         <ul className= {isMobile ? "nav-links-mobile" : "nav-links"}
         onClick={()=> setIsMobile(false)}>
-          <NavLink className="home" to="/">
-           <li>HOME </li> 
+          <NavLink className="home" to="/login">
+           <li>Log In </li> 
           </NavLink>
         
           <NavLink className="signup" to="/signup">

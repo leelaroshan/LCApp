@@ -5,12 +5,14 @@ import { Switch,Route } from 'react-router-dom';
 
 import { useState} from 'react';
 import Navbar  from './components/Navbar';
+import Home from './components/Home';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Languages from './components/Languages';
 import Profile from './components/Profile';
 import Friends from './components/Friends';
-import Chat from './components/video-chat/Chat'
+import Chat from './components/video-chat/Chat';
+
 
 
 import Footer from './components/Footer';
@@ -31,7 +33,8 @@ function App() {
        <Navbar />
       </header>
       <Switch>
-       <Route exact path="/" >
+       <Route exact  path="/" component={Home} />
+       <Route exact path="/login" >
         <Login setUser= {setUser} user={user}/>
        </Route>
        <Route exact path="/signup" >
@@ -45,6 +48,7 @@ function App() {
        {/* <Route  path="/profile" component={Profile} /> */}
 
        <Route  path="/chat" component={Chat} />
+       
 
       </Switch>
 

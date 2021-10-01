@@ -5,6 +5,11 @@ import TextField from "@material-ui/core/TextField";
 import MenuItem from '@material-ui/core/MenuItem';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+
+import { FormGroup } from '@material-ui/core';
+
+import {Checkbox } from "@material-ui/core";
 import Select from '@material-ui/core/Select';
 import Languages from '../languages.json';
 import axios from 'axios';
@@ -202,13 +207,18 @@ export default function Signup({user,setUser}) {
       }
     })}
 
-
+      <FormGroup>
+       <FormControlLabel 
+       control={<Checkbox defaultChecked color="success"/>} 
+       label=" I agree to the terms and conditions"
+      />
 
             
-        <Button type="submit"
-        variant="contained"   
-         style={{ color: "#1F4E5A",backgroundColor:"#5CE1E6", width:"300px" }} >
-		Sign Up</Button>
+      <Button type="submit"
+      variant="contained"   
+      style={{ color: "#1F4E5A",backgroundColor:"#5CE1E6", width:"300px" }} >
+		  Sign Up</Button>
+      </FormGroup>
 
         </div>
      </form>

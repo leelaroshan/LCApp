@@ -4,6 +4,12 @@ import React from 'react';
 import Button from "@material-ui/core/Button"
 
 import TextField from "@material-ui/core/TextField";
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+
+import { FormGroup } from '@material-ui/core';
+
+import {Checkbox } from "@material-ui/core";
+// import { Checkbox } from '@material-ui/core/icons';
 import { useHistory } from 'react-router';
 
 
@@ -68,8 +74,8 @@ export default function Login({setUser,user}) {
     return (
     <div className="login-container">
       <h2 className="heading2">Welcome to the Language community</h2>
-      <h4 className="login-h">Click here to <span onClick={onClick}>Login </span>
-       if don't have account please <Link to="/signup" > Sign up</Link> here</h4>
+      <h4 className="login-h">Click here to <span onClick={onClick}>Login </span></h4>
+       {/* if don't have account please <Link to="/signup" > Sign up</Link> here */}
       
       { displayLogin && (
         <form  >
@@ -86,11 +92,19 @@ export default function Login({setUser,user}) {
         <TextField
         id="filled-basic"
         label="Password"
+        type="password"
         variant="filled"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         style={{ marginBottom: "20px",marginTop:"20px", width:"300px"}}
        />
+       <FormGroup>
+       <FormControlLabel 
+       control={<Checkbox defaultChecked  color="success"/>} 
+       label="Remember Me"
+       
+       />
+       </FormGroup>
              
         <Button  type="submit"
         variant="contained"   
