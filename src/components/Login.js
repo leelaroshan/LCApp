@@ -10,24 +10,22 @@ import { FormGroup } from '@material-ui/core';
 
 import {Checkbox } from "@material-ui/core";
 // import { Checkbox } from '@material-ui/core/icons';
-import { useHistory } from 'react-router';
+
+import {Link} from "react-router-dom";
 
 
 import { useState } from 'react';
 import axios from 'axios';
-import {Link} from "react-router-dom";
-import { Redirect } from 'react-router';
 
 import './Login.css';
 
 
-export default function Login({setUser,user}) {
+export default function Login({setUser,user, setToken, isLoggedIn, setIsLoggedIn, login }) {
 
    
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [displayLogin, setDisplayLogin] = useState(false);
-    let history = useHistory();
+    // const [displayLogin, setDisplayLogin] = useState(false);
 
    
 
@@ -43,13 +41,7 @@ export default function Login({setUser,user}) {
 
         console.log("hey user");
 
-        axios
-        .post("https://thawing-dawn-59246.herokuapp.com/users/login", newUser)
-        .then((res) => {
-         setUser(res.data.data);
-         history.push("/languages");
-         console.log("login " , res.data);
-        }).catch((err)=> console.log(err, err.response));
+        login(newUser)
   
      
       setEmail("");
@@ -57,10 +49,7 @@ export default function Login({setUser,user}) {
       
     };
 
-    const onClick = ()=>{
-      setDisplayLogin(!displayLogin);
-    }
-
+  
 
    
   
@@ -74,10 +63,10 @@ export default function Login({setUser,user}) {
     return (
     <div className="login-container">
       <h2 className="heading2">Welcome to the Language community</h2>
-      <h4 className="login-h">Click here to <span onClick={onClick}>Login </span></h4>
-       {/* if don't have account please <Link to="/signup" > Sign up</Link> here */}
+      {!isLoggedIn && <h4 className="login-h">Log in  </h4>}
+       {/* <span onClick={onClick}>Login </span> if don't have account please <Link to="/signup" > Sign up</Link> here */}
       
-      { displayLogin && (
+     
         <form  >
         <div className="form-div"> 
         <TextField
@@ -100,7 +89,7 @@ export default function Login({setUser,user}) {
        />
        <FormGroup>
        <FormControlLabel 
-       control={<Checkbox defaultChecked  color="success"/>} 
+       control={<Checkbox defaultChecked  color="primary"/>} 
        label="Remember Me"
        
        />
@@ -109,14 +98,18 @@ export default function Login({setUser,user}) {
         <Button  type="submit"
         variant="contained"   
         onClick={handleSubmit}
-        style={{ color: "teal",backgroundColor:"#5CE1E6", width:"300px" }} >
+        style={{ color: "teal",marginTop:"30px",marginBottom:"30px",backgroundColor:"#5CE1E6", width:"300px" }} >
         Log In</Button>
+
+
+       <Link to="/signup"> 
+        <p className="signup-link">Don't have an account Please Signup</p>
+        </Link>
  
         </div>
         </form>
 
-      )}
-
+     
        
    </div>
     )

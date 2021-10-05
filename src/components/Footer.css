@@ -8,7 +8,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
+    /* align-items: center; */
     height: 100px;
     background-color: #1F4E5A;
     color:white;
@@ -18,11 +18,49 @@
 .social-media{
     display: flex;
     flex-direction: row;
-    justify-content:space-between;
-    /* align-items: center; */
+    justify-content:space-around;
+    align-items: center;
 }
 
 .logo{
     width: 150px;
     height:150px;
 }
+
+
+
+@media screen and (max-width:780px){
+
+    /* .Nav-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 100px;
+        background-color: #1F4E5A;
+        color:white;
+        
+        
+    } */
+    
+  
+    .social-media{
+        display: flex;
+        flex-direction: column;
+        justify-content:space-around;
+        /* align-items:; */
+    }
+
+   
+
+
+
+  
+}
+
+
+
+
+
+
+

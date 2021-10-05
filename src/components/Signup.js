@@ -15,27 +15,20 @@ import Languages from '../languages.json';
 import axios from 'axios';
 import './Signup.css';
 
-import { Redirect } from 'react-router';
+import { useHistory } from 'react-router';
 
-
-
-
-
-
-
-
-const initialLanguages = [
-  {
+ const initialLanguages = [
+   {
     name: "",
     level: ""
-  },
-  {
+   },
+   {
     name: "",
     level: ''
-  }
-]
+   }
+ ]
 
-export default function Signup({user,setUser}) {
+export default function Signup({ user,setUser, setIsLoggedIn }) {
     
     const [userName, setUserName] = useState("");
     const [email, setEmail] = useState("");
@@ -43,11 +36,11 @@ export default function Signup({user,setUser}) {
     const [languages, setLanguages] = useState(initialLanguages);
     const [levels, setLevels] = useState([]);
     
-    
+    const history = useHistory();
 
     useEffect(() => {
       axios
-      .get('https://thawing-dawn-59246.herokuapp.com/levels')
+      .get('http://localhost:5000/levels')
       .then(res => setLevels(res.data.data.sort((a, b) => {
         return a.step - b.step;
       })))
@@ -63,23 +56,23 @@ export default function Signup({user,setUser}) {
           password,
           languages,
         };
-        console.log(newUser)
     axios
-        .post("https://thawing-dawn-59246.herokuapp.com/users", newUser)
+        .post("http://localhost:5000/users", newUser)
         .then((res) => {
-          setUser(res.data);
+          setUser(res.data.data);
+          setIsLoggedIn(true);
+          localStorage.setItem('token', res.data.token);
+          history.push('/languages')
         }).catch((err)=> console.log(err, err.response));
   
       setUserName("");
       setEmail("");
       setPassword("");
       setLanguages([]);
-      alert("Your registration is successful.");
     };
 
     const handleChangeLanguage = (e, index) => {
         const level = languages[index].level
-        console.log(index)
         const newLanguages = languages.map((lang, langIndex) => {
           if (index === langIndex) {
             const native = levels[levels.length - 1]._id;
@@ -103,18 +96,6 @@ export default function Signup({user,setUser}) {
 
       setLanguages(newLanguages)
     };
-
-
-
-
-    console.log(languages)
-
-
-
-    if(user)
-   return (
-     <Redirect to="/languages" />
-   )
 
   return (
 
@@ -151,28 +132,28 @@ export default function Signup({user,setUser}) {
     type="password"
 		value={password}
 		onChange={(e) => setPassword(e.target.value)}
-    style={{ marginBottom: "20px",marginTop:"20px", width:"300px"}}
+    style={{ marginBottom: "20px",marginTop:"20px", width:"300px",height:"50px"}}
 		/>
-    <p>Your Native Language </p><br></br>
+    {/* <p>Your Native Language </p><br></br> */}
         
     {languages.map((language, index) => {
       if (!index) {
         return (
-          <FormControl variant="filled" sx={{ m: 1, minWidth: 10 }}>
+          <FormControl key={index} variant="filled" sx={{ m: 1, minWidth: 10 }}>
           <InputLabel id="NativeLanguage"> your native language</InputLabel>
           <Select
           labelId="NativeLanguage"
           onChange={(e) => handleChangeLanguage(e, index)}
           style={{ marginBottom: "20px",marginTop:"20px", width:"300px", height:"50px"}}
-          >{Languages.map((item)=> (
-          <MenuItem value={item.name}>{item.name}</MenuItem>
+          >{Languages.map((item, i)=> (
+          <MenuItem key={i} value={item.name}>{item.name}</MenuItem>
           ))}
           </Select>
          </FormControl>
         )
       } else {
         return (
-        <>
+        <React.Fragment key={index}>
         {index === 1 ? <p>Languages To Practice</p> : ''}
         <FormControl variant="filled" sx={{ m: 1, minWidth: 10 }}>
         <InputLabel id="demo-simple-select-filled-label">practice language</InputLabel>
@@ -181,8 +162,8 @@ export default function Signup({user,setUser}) {
         id="demo-simple-select-filled"
         onChange={(e) => handleChangeLanguage(e, index)}
         style={{ marginBottom: "20px",marginTop:"20px", width:"300px", height:"50px"}}
-        >{Languages.map((item)=> (
-        <MenuItem value={item.name}>{item.name}</MenuItem>
+        >{Languages.map((item, i)=> (
+        <MenuItem key={i} value={item.name}>{item.name}</MenuItem>
         ))}
         </Select>
        </FormControl>
@@ -197,26 +178,26 @@ export default function Signup({user,setUser}) {
          <MenuItem value="">
               <em>None</em>
             </MenuItem>
-            {levels.map(level => (
-              <MenuItem value={level._id}>{level.name}</MenuItem>
+            {levels.map((level, i) => (
+              <MenuItem key={i} value={level._id}>{level.name}</MenuItem>
             ))}
         </Select>
        </FormControl>
-       </>
+       </React.Fragment>
        )
       }
     })}
 
       <FormGroup>
        <FormControlLabel 
-       control={<Checkbox defaultChecked color="success"/>} 
+       control={<Checkbox defaultChecked color="primary"/>} 
        label=" I agree to the terms and conditions"
       />
 
             
       <Button type="submit"
       variant="contained"   
-      style={{ color: "#1F4E5A",backgroundColor:"#5CE1E6", width:"300px" }} >
+      style={{ color: "#1F4E5A",backgroundColor:"#5CE1E6", width:"300px",height:"50px" }} >
 		  Sign Up</Button>
       </FormGroup>
 

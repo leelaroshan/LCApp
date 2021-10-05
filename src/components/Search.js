@@ -5,14 +5,18 @@ import {Link} from 'react-router-dom';
 import profilepic from './images/profilepic.png';
 import Loader from "react-loader-spinner";
 
-export default function Friends({ callUser }) {
+
+const BASE_ROOT = "http://localhost:5000/searchUser?lang=" ;
+
+
+export default function Search({ callUser, user }) {
 
     const [friends, setFriends] = useState([]);
     const [loading, setLoading] = useState(true);
 
    useEffect(()=>{
      axios
-      .get("http://localhost:5000/users", {
+      .get(`${BASE_ROOT}${user.languages[0]?.name}"&nativeLang="${user.languages[1]?.name} `     ,{
          headers: {
             authorization: `Bearer ${localStorage.getItem('token')}`
          }

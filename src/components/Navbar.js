@@ -2,12 +2,21 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import './Navbar.css';
-import vibes from './images/vibes.png'
+import { useHistory } from 'react-router';
 
-export default function Navbar() {
+import vibes from './images/vibes.png';
+
+
+export default function Navbar({ isLoggedIn, setIsLoggedIn }) {
+  const history = useHistory();
 
   const [isMobile, setIsMobile] = useState(false);
 
+  const logOut = () => {
+    localStorage.removeItem('token');
+    setIsLoggedIn(false);
+    history.push('/');
+  }
 
   return (
     <div className="NavContainer">
@@ -18,19 +27,28 @@ export default function Navbar() {
      
         <ul className= {isMobile ? "nav-links-mobile" : "nav-links"}
         onClick={()=> setIsMobile(false)}>
-          <NavLink className="home" to="/login">
-           <li>Log In </li> 
+          <NavLink className="login" to="/login">
+           {!isLoggedIn ? <li>Log In </li> : <li onClick={logOut}>Log Out</li>} 
           </NavLink>
         
-          <NavLink className="signup" to="/signup">
+          {!isLoggedIn && (<NavLink className="signup" to="/signup">
             <li>Sign Up </li>
-          </NavLink>
+          </NavLink>)}
+
+          
+          {isLoggedIn && (
+            <>
           <NavLink className="language" to="/languages">
-           <li> language</li>
+           <li>Languages</li>
           </NavLink>
+          
           <NavLink className="profile" to="/profile">
-           <li> Profile</li> 
+           <li>Profile</li> 
           </NavLink>
+          <NavLink className="home" to="/">
+           <li>Home</li> 
+          </NavLink>
+          </>)}
         </ul>
 
         <button className="mobile-menu-icon" onClick={()=>setIsMobile(!isMobile)}>

@@ -44,6 +44,20 @@
 
 
 .main-img:hover{
+    
+
+}
+
+
+
+
+
+
+
+
+
+
+.main-img:hover{
     cursor: pointer;
 
 }
@@ -67,4 +81,38 @@
 }
 .animation-div{
 
+}
+
+
+
+
+@media screen and (max-width:1054px){
+    
+    .about-app{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        border: 1px transparent gray;
+    }
+
+    .about{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:center;
+    }
+    
+
+    .main-img{
+        margin-left: 5px;
+        margin-top: 30px;
+        width:400px;
+        height:400px;
+    }
+
+
+
+
+  
 }

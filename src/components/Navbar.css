@@ -26,10 +26,11 @@
     list-style: none;
 }
 
-.home,
+.login,
 .signup,
 .language,
-.profile{
+.profile,
+.home{
     text-decoration: none;
     color:white;
     text-align: none;
@@ -41,10 +42,23 @@
 
 }
 
-.signup{
+.signup,
+ .login {
     border: 1px solid green;
     border-radius: 5px;
 }
+
+
+ /* .login :hover {
+     color: rgb(22, 186, 201);
+     background-color: white;
+    
+
+ } */
+
+
+
+
 
 .mobile-menu-icon{
     display: none;
@@ -71,9 +85,10 @@
         width: 100%;
 
     }
-    .home,
+    .login,
     .language,
-    .signup{
+    .signup,
+    .home{
         color: white;
         text-align: center;
         padding: 30px;

@@ -1,16 +1,36 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './Languages.css';
+
+
 import {Link} from "react-router-dom";
 
 
 
 
 
+
 export default function Languages() {
+
+
+
+ 
+
+
 return (
   <div className="language-container">
 
    <h2 className="community-heading">Which Language community do you want to join </h2>
+   {/* <TextField
+        id="filled-basic"
+        label="search"
+        type="text"
+        variant="filled"
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        style={{ marginBottom: "20px",marginTop:"20px", width:"300px"}}
+       /> */}
+
+   
 
     <div className="background"> 
       

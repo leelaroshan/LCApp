@@ -7,18 +7,22 @@ import main from './images/main.png';
 
 
 
-export default function Home() {
+export default function Home({ isLoggedIn }) {
     return (
      <div className="home-container">
       <div className="content-div">
       <h2 className="home-heading">Welcome to the Language community</h2>
+      {!isLoggedIn && (
       <h4 className="login-signup">Click here to <Link to="/login">Login </Link>
-       if don't have account please <Link to="/signup" > Sign up</Link> here</h4>
+       if don't have account please <Link to="/signup" > Sign up</Link> here
+       </h4>
+       )}
       
       <div className="about-app"> 
        <div className="animation-div">
        <img src={main}
-       className="main-img" />
+       className="main-img" 
+       alt="lang-img"/>
        </div>
 
        <div className="about">
