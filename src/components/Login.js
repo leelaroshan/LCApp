@@ -9,6 +9,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { FormGroup } from '@material-ui/core';
 
 import {Checkbox } from "@material-ui/core";
+import {BsFileLockFill} from 'react-icons/bs';
 // import { Checkbox } from '@material-ui/core/icons';
 
 import {Link} from "react-router-dom";
@@ -66,7 +67,7 @@ export default function Login({setUser,user, setToken, isLoggedIn, setIsLoggedIn
       {!isLoggedIn && <h4 className="login-h">Log in  </h4>}
        {/* <span onClick={onClick}>Login </span> if don't have account please <Link to="/signup" > Sign up</Link> here */}
       
-     
+       <h2 className="heading2"><BsFileLockFill  className="login-icon" />  </h2>
         <form  >
         <div className="form-div"> 
         <TextField
@@ -89,7 +90,7 @@ export default function Login({setUser,user, setToken, isLoggedIn, setIsLoggedIn
        />
        <FormGroup>
        <FormControlLabel 
-       control={<Checkbox defaultChecked  color="primary"/>} 
+       control={<Checkbox defaultChecked  color="default" />} 
        label="Remember Me"
        
        />

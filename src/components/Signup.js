@@ -6,7 +6,6 @@ import MenuItem from '@material-ui/core/MenuItem';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-
 import { FormGroup } from '@material-ui/core';
 
 import {Checkbox } from "@material-ui/core";
@@ -14,6 +13,8 @@ import Select from '@material-ui/core/Select';
 import Languages from '../languages.json';
 import axios from 'axios';
 import './Signup.css';
+
+ import {BsFileLockFill} from 'react-icons/bs';
 
 import { useHistory } from 'react-router';
 
@@ -100,7 +101,9 @@ export default function Signup({ user,setUser, setIsLoggedIn }) {
   return (
 
   <div className="signup-container">
-    <h2 className="heading2">Sign Up </h2>
+    
+    <h3 className="heading2"><BsFileLockFill  className="signup-icon" />  </h3>
+    
 
     <form  onSubmit={handleSubmit}>
 
@@ -190,7 +193,7 @@ export default function Signup({ user,setUser, setIsLoggedIn }) {
 
       <FormGroup>
        <FormControlLabel 
-       control={<Checkbox defaultChecked color="primary"/>} 
+       control={<Checkbox defaultChecked color="default"/>} 
        label=" I agree to the terms and conditions"
       />
 

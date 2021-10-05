@@ -1,12 +1,14 @@
 import React, {useState,useEffect} from 'react';
-import './Friends.css';
+
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import profilepic from './images/profilepic.png';
 import Loader from "react-loader-spinner";
+import './Searchuser.css';
 
 
-const BASE_ROOT = "http://localhost:5000/searchUser?lang=" ;
+const BASE_ROOT = "http://localhost:5000/users/searchUser?lang=" ;
+const ROOT = "http://localhost:5000/users" ;
 
 
 export default function Search({ callUser, user }) {
@@ -14,9 +16,13 @@ export default function Search({ callUser, user }) {
     const [friends, setFriends] = useState([]);
     const [loading, setLoading] = useState(true);
 
+    const url = user ?  `${BASE_ROOT}${user.languages[0]?.name}&nativeLang=${user.languages[1]?.name} ` : `${ROOT}`
+
+    console.log(url);
+
    useEffect(()=>{
      axios
-      .get(`${BASE_ROOT}${user.languages[0]?.name}"&nativeLang="${user.languages[1]?.name} `     ,{
+      .get(url ,{
          headers: {
             authorization: `Bearer ${localStorage.getItem('token')}`
          }
@@ -46,6 +52,7 @@ export default function Search({ callUser, user }) {
             src={profilepic} 
             alt="profilepic"
             className="profile-img" />
+            
             <h4 key={index}>{friend.userName} </h4> 
             <hr width="30%"/>
             <h5> Native: {friend.languages[0]?.name}</h5>

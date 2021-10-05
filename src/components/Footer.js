@@ -1,8 +1,21 @@
 import React from 'react';
 import './Footer.css';
-import GitHubIcon from '@material-ui/icons/GitHub';
-// import vibes from './images/vibes.png';
-import CopyrightIcon from '@material-ui/icons/Copyright';
+
+import {Link} from "react-router-dom";
+
+import {
+    TiSocialFacebook,
+    TiSocialTwitter,
+    
+  } from "react-icons/ti";
+   import {BsLinkedin} from "react-icons/bs";
+  
+  import { AiOutlineGithub } from "react-icons/ai";
+
+
+
+
+
 
 
 
@@ -12,16 +25,27 @@ export default function Footer() {
      
        
      
-     <div className="social-media">
-         <p>  2021 Leelavathi Gade</p>
-         <img src={CopyrightIcon}
-         alt="copyright"
-          width="50px" height="50px" />
+     <div className="copyright-socialmedia">
+       <p>Copyright &copy; 2021 LCApp</p>
+        
          
+        <div className="social-media">  
          <p>Follow us on Social media</p>
-         <img src={GitHubIcon} 
-         alt="github"
-         width="50px" height="50px" />
+        
+          <div className="icons-div"> 
+
+          
+
+            <Link  to= {{ pathname: "https://github.com/leelaroshan" }} target="_blank" >  
+            <AiOutlineGithub className="github" />
+            </Link>
+
+             
+           <BsLinkedin className="linkedin" />
+           
+         </div>
+
+        </div>
          
 
      </div>

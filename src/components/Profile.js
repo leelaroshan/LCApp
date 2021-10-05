@@ -3,6 +3,9 @@ import './Profile.css';
 import userpic from './images/userpic.png';
 import friendspic from './images/friends.png';
 
+
+
+import {AiOutlineMail  } from "react-icons/ai";
 // import MailIcon from '@material-ui/icons/Mail';
 
 
@@ -33,8 +36,10 @@ export default function Profile({user, setUser}) {
             <hr width="100%"  />
             <h5 className="learner">{user.languages[1].name} Learner</h5>
             <hr width="100%" />
-            <h5 className="level">{user.email}</h5>
-           <hr width="100%" />
+            
+            <h5 className="level"><AiOutlineMail className="email-icon" />  {user.email}</h5>
+
+            <hr width="100%" />
             <h5 className="level">{user.languages[1].level.name}</h5>
             
 

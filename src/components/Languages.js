@@ -20,15 +20,7 @@ return (
   <div className="language-container">
 
    <h2 className="community-heading">Which Language community do you want to join </h2>
-   {/* <TextField
-        id="filled-basic"
-        label="search"
-        type="text"
-        variant="filled"
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-        style={{ marginBottom: "20px",marginTop:"20px", width:"300px"}}
-       /> */}
+  
 
    
 
@@ -37,7 +29,7 @@ return (
       <div className="card"> 
       <div className="card-div">
       <h3 >Guten Tag</h3>
-      <Link to= '/friends'>
+      <Link to= '/search'>
            <button className="readbtn">German </button>
       </Link>
       </div>
