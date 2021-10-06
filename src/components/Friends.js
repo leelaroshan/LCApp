@@ -9,6 +9,7 @@ import profilepic from './images/profilepic.png';
 import Loader from 'react-loader-spinner';
 
 import { FaVideo} from "react-icons/fa";
+import { useParams } from 'react-router-dom';
 
 
 
@@ -25,8 +26,14 @@ export default function Friends({ user }) {
   const [friends, setFriends] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const { language } = useParams();
 
-  const url = user ?  `${ROOT}${user.languages[0]?.name}&nativeLang=${user.languages[1]?.name} ` : `${BASE_ROOT}`;
+  const url = user
+    ? `${ROOT}${language}&nativeLang=${user.languages[0]?.name}`
+    : `${BASE_ROOT}`;
+
+
+  
 
   // video chat states
   const [stream, setStream] = useState();

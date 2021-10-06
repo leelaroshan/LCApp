@@ -37,7 +37,7 @@ return (
       <div className="card"> 
       <div className="card-div">
       <h3 >Guten Tag</h3>
-      <Link to= '/friends'>
+      <Link to= '/friends/german'>
            <button className="readbtn">German </button>
       </Link>
       </div>
@@ -47,7 +47,7 @@ return (
       <div className="card"> 
       <div className="card-div">
       <h3 >Hallo</h3>
-      <Link to= '/friends'>
+      <Link to= '/friends/english'>
            <button className="readbtn">English </button>
       </Link>
       </div>
@@ -60,7 +60,7 @@ return (
             <h3> Namasthe</h3>
 
      
-           <Link to= '/friends'>
+           <Link to= '/friends/hindi'>
            <button className="readbtn">Hindi </button>
            </Link>
 
@@ -77,7 +77,7 @@ return (
       width="200px" height="200px" 
       alt="german"
       className="card-img" />  */}
-      <Link to= '/friends'>
+      <Link to= '/friends/italian'>
            <button className="readbtn">Italian </button>
       </Link>
 
@@ -89,7 +89,7 @@ return (
        <div className="card-div">
          <h3 >Bonjour</h3>
 
-         <Link to= '/friends'>
+         <Link to= '/friends/french'>
            <button className="readbtn">French </button>
         </Link>
         </div>
@@ -101,7 +101,7 @@ return (
 
       
 
-         <Link to= '/friends'>
+         <Link to= '/friends/spanish'>
            <button className="readbtn">Spanish </button>
          </Link>
        </div>
@@ -115,7 +115,7 @@ return (
             <h3 >nî hâo</h3>
 
      
-           <Link to= '/friends'>
+           <Link to= '/friends/chinese'>
            <button className="readbtn">Chinese </button>
            </Link>
 
@@ -129,7 +129,7 @@ return (
             <h3>Konnichiwa</h3>
 
      
-           <Link to= '/friends'>
+           <Link to= '/friends/japannese'>
            <button className="readbtn">Japannese </button>
            </Link>
 

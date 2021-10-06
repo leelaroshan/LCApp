@@ -96,7 +96,7 @@ function App() {
           </Route>
 
           <Route path='/languages' component={Languages} />
-          <Route path='/friends'>
+          <Route path='/friends/:language'>
             <Friends  user={user} />
           </Route>
           <Route exact path='/profile'>
