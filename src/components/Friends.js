@@ -138,8 +138,9 @@ export default function Friends({ user }) {
     connectionRef.current.destroy();
   };
 
+  console.log("name ", name );
 
-  console.log(name,caller );
+  console.log("caller.....",caller );
   if (loading)
     return <Loader type='Oval' color='teal' height={150} width={150} />;
 
