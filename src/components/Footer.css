@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.Nav-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* align-items: center; */
+    height: 100px;
+    background-color: #1F4E5A;
+    color:white;
+    
+    
+}
+.copyright-socialmedia{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    /* align-items: center; */
+}
+
+.social-media{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    align-items: center;
+}
+
+.icons-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+
+.logo{
+    width: 150px;
+    height:150px;
+}
+
+
+.github{
+    color: white;
+    width: 50px;
+
+}
+
+.linkedin{
+    color: white;
+    width: 50px;
+    
+}
+
+@media screen and (max-width:780px){
+
+    .copyright-socialmedia{
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        
+    }
+    
+  
+    .social-media{
+        display: flex;
+        flex-direction: column;
+        justify-content:space-around;
+        /* align-items:; */
+    }
+
+   
+
+
+
+  
+}
+
+
+
+

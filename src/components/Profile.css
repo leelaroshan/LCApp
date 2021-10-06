@@ -1,0 +1,137 @@
+
+
+
+.profie-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+
+
+
+
+
+.profile-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 2px solid #9AD4E4;
+    background-color: whitesmoke;
+    
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+
+    /* margin-left: 500px;
+    width: 500px;
+    height: 700px;
+     */
+   
+    /* box-shadow: ; */
+}
+
+.details{
+    padding-top: 20px;
+    font-family:fantasy;
+    color:#EB6139;
+    font-size: large;
+}
+
+
+
+
+
+
+
+
+.img-bio{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.bio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.bio-name{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: teal;
+    font-size: large;
+    padding-bottom: 10px;
+    padding-top: 10px;
+
+}
+
+
+/* 
+.bio {
+    padding-top: 5px;
+    
+    
+    color: green ;
+    font-size: large;
+} */
+
+
+.friends-div h5{
+    font-family:fantasy;
+}
+.learner{
+    color:#1F4E5A  ;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    padding-bottom: 10px;
+    padding-top: 10px;
+
+
+}
+.level{
+    color: #1F4E5A;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+
+
+.user-img{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+
+}
+
+
+.friends-img{
+    height: 200px;
+    width: 200px;
+
+}
+
+
+
+
+
+
+
+
+
+.friends-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #9AD4E4;
+    margin:20px;
+
+}
+
+

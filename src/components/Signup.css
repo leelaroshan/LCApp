@@ -1,0 +1,50 @@
+.signup-container{
+    color:teal;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: space-around;
+}
+
+
+
+.form-container{
+    
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+
+}
+
+.heading2{
+    padding-top:20px;
+}
+
+
+/* .email-textfield,
+.username-textfield,
+.password-textfield{
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+} */
+
+
+.signup-btn{
+     color: "#1F4E5A";
+     background-color:"#9AD4E4"
+}
+
+
+
+
+
+
+

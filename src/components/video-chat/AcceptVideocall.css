@@ -1,0 +1,50 @@
+
+
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    
+    background-color: whitesmoke;
+
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    
+}
+
+
+.buttons-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+
+
+
+
+
+.accept-btn{
+
+    color: black;
+    background-color: green;
+    padding: 10px;
+    border-radius: 5px;
+    
+    cursor: pointer;
+}
+
+.decline-btn{
+
+    color: black;
+    background-color: red;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 30px;
+    cursor: pointer;
+}
+
