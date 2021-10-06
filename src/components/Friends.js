@@ -138,6 +138,8 @@ export default function Friends({ user }) {
     connectionRef.current.destroy();
   };
 
+
+  console.log(caller);
   if (loading)
     return <Loader type='Oval' color='teal' height={150} width={150} />;
 
