@@ -5,6 +5,12 @@ import {Link} from 'react-router-dom';
 import profilepic from './images/profilepic.png';
 import Loader from "react-loader-spinner";
 
+
+
+
+// import { FiVideo } from "react-icons/fi";
+// <FiVideo className="video-icon" />
+
 export default function Friends({ callUser }) {
 
     const [friends, setFriends] = useState([]);
@@ -12,7 +18,7 @@ export default function Friends({ callUser }) {
 
    useEffect(()=>{
      axios
-      .get("http://localhost:5000/users", {
+      .get("https://thawing-dawn-59246.herokuapp.com/users", {
          headers: {
             authorization: `Bearer ${localStorage.getItem('token')}`
          }
@@ -49,9 +55,9 @@ export default function Friends({ callUser }) {
            return  <h5 key={i}>Practice languages: {language.name}</h5>
            })}
             {/* <h5>Practice Language: {friend.languages[1]?.name}</h5> */}
-            <h6>Level: {friend.languages[0]?.level?.name}</h6>
+            <h6>Level: {friend.languages[1]?.level?.name}</h6>
             <Link to= '/chat'> 
-            <button className="connect-btn" onClick={() => callUser(friend._id)}>Connect</button>
+            <button className="connect-btn" onClick={() => callUser(friend._id)}>Coonect</button>
             </Link>
             </div>
 

@@ -61,7 +61,7 @@ export default function Profile({user, setUser}) {
            
            
             <div className="friends-div">
-            <h5 >You connected with these people earlier</h5>
+            {/* <h5 >You connected with these people earlier</h5> */}
             <img src={friendspic}
             alt="your friends"
             className="friends-img" />

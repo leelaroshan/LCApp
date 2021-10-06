@@ -41,7 +41,7 @@ export default function Signup({ user,setUser, setIsLoggedIn }) {
 
     useEffect(() => {
       axios
-      .get('http://localhost:5000/levels')
+      .get('https://thawing-dawn-59246.herokuapp.com/levels')
       .then(res => setLevels(res.data.data.sort((a, b) => {
         return a.step - b.step;
       })))
@@ -58,7 +58,7 @@ export default function Signup({ user,setUser, setIsLoggedIn }) {
           languages,
         };
     axios
-        .post("http://localhost:5000/users", newUser)
+        .post("https://thawing-dawn-59246.herokuapp.com/users", newUser)
         .then((res) => {
           setUser(res.data.data);
           setIsLoggedIn(true);

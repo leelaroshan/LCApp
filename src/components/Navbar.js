@@ -7,6 +7,10 @@ import { useHistory } from 'react-router';
 import vibes from './images/vibes.png';
 
 
+
+import { AiOutlineHome } from "react-icons/ai";
+
+
 export default function Navbar({ isLoggedIn, setIsLoggedIn }) {
   const history = useHistory();
 
@@ -46,7 +50,7 @@ export default function Navbar({ isLoggedIn, setIsLoggedIn }) {
            <li>Profile</li> 
           </NavLink>
           <NavLink className="home" to="/">
-           <li>Home</li> 
+           <li><AiOutlineHome  className="home-logo"/></li> 
           </NavLink>
           </>)}
         </ul>

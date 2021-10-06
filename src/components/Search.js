@@ -7,8 +7,8 @@ import Loader from "react-loader-spinner";
 import './Searchuser.css';
 
 
-const BASE_ROOT = "http://localhost:5000/users/searchUser?lang=" ;
-const ROOT = "http://localhost:5000/users" ;
+const BASE_ROOT = "https://thawing-dawn-59246.herokuapp.com/users/searchUser?lang=" ;
+const ROOT = "https://thawing-dawn-59246.herokuapp.com/users" ;
 
 
 export default function Search({ callUser, user }) {
@@ -60,7 +60,7 @@ export default function Search({ callUser, user }) {
            return  <h5 key={i}>Practice languages: {language.name}</h5>
            })}
             {/* <h5>Practice Language: {friend.languages[1]?.name}</h5> */}
-            <h6>Level: {friend.languages[0]?.level?.name}</h6>
+            <h6>Level: {friend.languages[1]?.level?.name}</h6>
             <Link to= '/chat'> 
             <button className="connect-btn" onClick={() => callUser(friend._id)}>Connect</button>
             </Link>

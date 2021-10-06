@@ -51,8 +51,8 @@ export default function Login({setUser,user, setToken, isLoggedIn, setIsLoggedIn
     };
 
   
-
-   
+ 
+  
   
   //  if(user)
   //  return (
@@ -67,7 +67,7 @@ export default function Login({setUser,user, setToken, isLoggedIn, setIsLoggedIn
       {!isLoggedIn && <h4 className="login-h">Log in  </h4>}
        {/* <span onClick={onClick}>Login </span> if don't have account please <Link to="/signup" > Sign up</Link> here */}
       
-       <h2 className="heading2"><BsFileLockFill  className="login-icon" />  </h2>
+       <h2 className="heading2"><BsFileLockFill  className="signup-icon" />  </h2>
         <form  >
         <div className="form-div"> 
         <TextField
@@ -90,7 +90,7 @@ export default function Login({setUser,user, setToken, isLoggedIn, setIsLoggedIn
        />
        <FormGroup>
        <FormControlLabel 
-       control={<Checkbox defaultChecked  color="default" />} 
+       control={<Checkbox defaultChecked  color="default"/>} 
        label="Remember Me"
        
        />
