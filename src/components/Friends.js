@@ -3,7 +3,7 @@ import './Friends.css';
 import axios from 'axios';
 import io from 'socket.io-client';
 import Peer from 'simple-peer';
-import Chat from '../components/video-chat/Chat';
+import Chat from '../components/video-chat\/Chat';
 import AcceptVideocall from '../components/video-chat/AcceptVideocall';
 
 import { Link } from 'react-router-dom';
