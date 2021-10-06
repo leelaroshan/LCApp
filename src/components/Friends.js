@@ -139,7 +139,7 @@ export default function Friends({ user }) {
   };
 
 
-  console.log(caller);
+  console.log(name,caller );
   if (loading)
     return <Loader type='Oval' color='teal' height={150} width={150} />;
 
