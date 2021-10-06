@@ -12,7 +12,9 @@ import { FaVideo} from "react-icons/fa";
 
 
 
-const socket = io.connect('https://thawing-dawn-59246.herokuapp.com/');
+const socket = io.connect('https://thawing-dawn-59246.herokuapp.com/',{
+  withCredentials: true
+});
 
 
 
