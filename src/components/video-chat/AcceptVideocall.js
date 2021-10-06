@@ -7,15 +7,15 @@ import './AcceptVideocall.css';
 
 
 
-export default function AcceptVideocall({answerCall, caller}){
+export default function AcceptVideocall({answerCall}){
 
 
- console.log("caller name", caller)
+ 
 
     return (
         <div className="video-container">
             <div className="box">
-              <h4> {caller.user._id.userName} is calling You ...</h4>
+              <h4>  is calling You ...</h4>
 
 
               <div className="buttons-div"> 

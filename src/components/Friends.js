@@ -70,8 +70,7 @@ export default function Friends({ user }) {
       socket.emit('join', user._id);
 
       socket.on('callUser', data => {
-        console.log('callUser - data.from', data.from);
-        console.log('callUser - user._id', user);
+       
         setReceivingCall(true);
         setCaller(data.from);
         setName(data.name);
@@ -97,7 +96,7 @@ export default function Friends({ user }) {
     });
 
     peer.on('stream', stream => {
-      console.log('peer on stream', stream);
+      
       userVideo.current.srcObject = stream;
     });
 
@@ -110,7 +109,7 @@ export default function Friends({ user }) {
   };
 
   const answerCall = () => {
-    console.log('answer call');
+    
     setCallAccepted(true);
 
     const peer = new Peer({
@@ -120,12 +119,12 @@ export default function Friends({ user }) {
     });
 
     peer.on('signal', data => {
-      console.log('caller', caller);
+      
       socket.emit('answerCall', { signal: data, to: caller });
     });
 
     peer.on('stream', stream => {
-      console.log('peer on stream', stream);
+      
       userVideo.current.srcObject = stream;
     });
 
@@ -138,8 +137,7 @@ export default function Friends({ user }) {
     connectionRef.current.destroy();
   };
 
-  console.log("name ", name );
-
+  
   console.log("caller.....",caller );
   if (loading)
     return <Loader type='Oval' color='teal' height={150} width={150} />;
@@ -151,7 +149,7 @@ export default function Friends({ user }) {
 
     
       
-      {receivingCall && <AcceptVideocall answerCall={answerCall} caller={caller} />}
+      {receivingCall && <AcceptVideocall answerCall={answerCall}  />}
           <Chat
             user={user}
             socket={socket}
