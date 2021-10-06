@@ -10,7 +10,7 @@ import './AcceptVideocall.css';
 export default function AcceptVideocall({answerCall, caller}){
 
 
- console.log("call user", caller.userName)
+ console.log("call user", caller.from)
 
     return (
         <div className="video-container">
