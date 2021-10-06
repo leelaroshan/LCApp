@@ -148,7 +148,7 @@ export default function Friends({ user }) {
 
     
       
-      {receivingCall && <AcceptVideocall answerCall={answerCall} />}
+      {receivingCall && <AcceptVideocall answerCall={answerCall} caller={caller} />}
           <Chat
             user={user}
             socket={socket}
