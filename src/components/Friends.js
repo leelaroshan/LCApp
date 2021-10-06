@@ -49,7 +49,7 @@ export default function Friends({ user }) {
 
   useEffect(() => {
     axios
-      .get(BASE_ROOT, {
+      .get(url, {
         headers: {
           authorization: `Bearer ${localStorage.getItem('token')}`
         }
