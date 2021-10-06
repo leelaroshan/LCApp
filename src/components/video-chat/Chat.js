@@ -20,16 +20,6 @@ export default function Chat({
   leaveCall,
   setStream
 }) {
-  // console.log(
-  //   'inside chat - userVideo - user - socket - stream - myVideo - leaveCall - setStream',
-  //   userVideo,
-  //   user,
-  //   socket,
-  //   stream,
-  //   myVideo,
-  //   leaveCall,
-  //   setStream
-  // );
   useEffect(() => {
     navigator.mediaDevices
       .getUserMedia({ video: true, audio: true })
