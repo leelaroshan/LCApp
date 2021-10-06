@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import axios from 'axios';
 
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './components/Home';

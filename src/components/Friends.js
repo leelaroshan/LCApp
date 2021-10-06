@@ -6,8 +6,6 @@ import Peer from 'simple-peer';
 import Chat from '../components/video-chat/Chat';
 import AcceptVideocall from '../components/video-chat/AcceptVideocall';
 
-import { Link } from 'react-router-dom';
-
 
 import profilepic from './images/profilepic.png';
 import Loader from 'react-loader-spinner';
@@ -116,7 +114,6 @@ export default function Friends({ user }) {
     setCallEnded(true);
     connectionRef.current.destroy();
   };
-
 
   if (loading)
     return <Loader type='Oval' color='teal' height={150} width={150} />;
