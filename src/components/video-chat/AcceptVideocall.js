@@ -19,9 +19,7 @@ export default function AcceptVideocall({answerCall}){
 
               <div className="buttons-div"> 
 
-              <NavLink to="/chat"> 
               <button className="accept-btn" onClick={answerCall}> Accept Call </button>
-              </NavLink>
 
               <button className="decline-btn">Decline Call</button>
 
