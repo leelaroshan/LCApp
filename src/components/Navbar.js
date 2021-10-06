@@ -5,6 +5,7 @@ import './Navbar.css';
 import { useHistory } from 'react-router';
 
 import vibes from './images/vibes.png';
+import {AiOutlineHome } from "react-icons/ai";
 
 
 export default function Navbar({ isLoggedIn, setIsLoggedIn }) {
@@ -46,7 +47,7 @@ export default function Navbar({ isLoggedIn, setIsLoggedIn }) {
            <li>Profile</li> 
           </NavLink>
           <NavLink className="home" to="/">
-           <li>Home</li> 
+           <li><AiOutlineHome /> </li> 
           </NavLink>
           </>)}
         </ul>

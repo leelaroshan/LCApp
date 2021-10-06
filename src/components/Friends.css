@@ -1,10 +1,46 @@
 
 
 
-.big-container h3{
-    padding-top: 30px;
+.community-header{
+    margin-top: 50px;
+    font-family:fantasy;
+    margin-bottom: 30px;
+
+
 }
+
+
+.big-container {
+display: flex;
+flex-direction: row;
+ justify-content: space-around;
+ align-items: flex-start;
+}
+
+
+
+
+/* video-chat */
+.video-chat {
+    
+ margin-left:30px;
+  margin-top: 50px;
+ background-color: cadetblue;
+ margin-bottom: 50px;
+
+}
+
+
+
+/* user cards */
+
+
 .user-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.user-bio{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -21,7 +57,7 @@
     align-items: center;
     width: 350px;
     height: 250px;
-    border: 1px solid gray;
+   
 
     border-radius: 30px;
     padding-bottom: 20px;
@@ -30,6 +66,7 @@
     margin-left:25px;
     margin-right: 25px;
     box-shadow: 5px 10px 8px 10px #888888;
+    border:1px solid lightseagreen;
    
 }
 
@@ -54,4 +91,51 @@
     background-color: teal;
     color:white;
 }
+
+
+
+.video-icon{
+    color:#5CE1E6;
+   
+    width:40px;
+    height:40px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width:780px){
+
+    
+    
+    .big-container {
+        display: flex;
+        flex-direction: column;
+         justify-content: space-around;
+         align-items: flex-start;
+    }
+        
+
+    .video-chat {
+    
+        margin-left:5px;
+         margin-top: 30px;
+        background-color: cadetblue;
+        margin-bottom: 10px;
+       
+       }
+       
+
+
+
+  
+}
+
+
+
 

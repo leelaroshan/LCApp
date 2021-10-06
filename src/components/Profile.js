@@ -56,18 +56,20 @@ export default function Profile({user, setUser}) {
            
            
             <div className="friends-div">
-            <h5 >You connected with these people earlier</h5>
-            <img src={friendspic}
-            alt="your friends"
-            className="friends-img" />
-            <div  className="friends-card"> 
-            <img 
-            src={userpic} 
-            alt="profilepic"
-            className="profile-img" />
-            <h3>userName </h3> 
-            <hr  width="10%"/>
-            </div>
+               {/* <h5 >You connected with these people earlier</h5> */}
+               <img src={friendspic}
+               alt="your friends"
+               className="friends-img" />
+
+               <div  className="friends-card"> 
+                <img 
+                  src={userpic} 
+                 alt="profilepic"
+                 className="profile-img" />
+                <h3>userName </h3> 
+              <hr  width="10%"/>
+              </div>
+
             </div>
 
             

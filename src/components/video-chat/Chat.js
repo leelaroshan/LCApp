@@ -32,7 +32,7 @@ export default function Chat({
 
   return (
     <>
-      <h1>Video Call</h1>
+      <h3>video call </h3>
       <div className='container'>
         <div className='video-container'>
           <div className='video'>
@@ -42,7 +42,8 @@ export default function Chat({
                 muted
                 ref={myVideo}
                 autoPlay
-                style={{ width: '300px' }}
+                className="myvideo"
+                style={{ width: '200px', height:'200px', borderRadius: '10%' }}
               />
             )}
           </div>
@@ -51,7 +52,7 @@ export default function Chat({
               playsInline
               ref={userVideo}
               autoPlay
-              style={{ width: '300px' }}
+              style={{ width: '500px', height:'500px' }}
             />
           </div>
         </div>

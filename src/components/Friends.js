@@ -5,16 +5,28 @@ import io from 'socket.io-client';
 import Peer from 'simple-peer';
 import Chat from '../components/video-chat\/Chat';
 import AcceptVideocall from '../components/video-chat/AcceptVideocall';
-
-
 import profilepic from './images/profilepic.png';
 import Loader from 'react-loader-spinner';
 
+import { FaVideo} from "react-icons/fa";
+
+
+
 const socket = io.connect('https://thawing-dawn-59246.herokuapp.com/');
 
+
+
+const BASE_ROOT = "https://thawing-dawn-59246.herokuapp.com/users";
+const ROOT = "https://thawing-dawn-59246.herokuapp.com/users/searchUser?lang=" ;
+
+
 export default function Friends({ user }) {
+
   const [friends, setFriends] = useState([]);
   const [loading, setLoading] = useState(true);
+
+
+  const url = user ?  `${ROOT}${user.languages[0]?.name}&nativeLang=${user.languages[1]?.name} ` : `${BASE_ROOT}`;
 
   // video chat states
   const [stream, setStream] = useState();
@@ -31,9 +43,13 @@ export default function Friends({ user }) {
   const connectionRef = useRef();
 
 
+  
+
+
+
   useEffect(() => {
     axios
-      .get('https://thawing-dawn-59246.herokuapp.com/users', {
+      .get(BASE_ROOT, {
         headers: {
           authorization: `Bearer ${localStorage.getItem('token')}`
         }
@@ -119,8 +135,12 @@ export default function Friends({ user }) {
     return <Loader type='Oval' color='teal' height={150} width={150} />;
 
   return (
-    <div className='big-container'>
-      <h3>your community friends are here</h3>
+    <div className='big-container'> 
+
+    <div className="video-chat">   
+
+    
+      
       {receivingCall && <AcceptVideocall answerCall={answerCall} />}
           <Chat
             user={user}
@@ -129,12 +149,19 @@ export default function Friends({ user }) {
             userVideo={userVideo}
             stream={stream}
             leaveCall={leaveCall}
-            setStream={setStream}
+            setStream={setStream} 
           />
+
+     </div>
       <div className='user-container'>
+      <h3 className="community-header">your community friends are here</h3>
+      <div className="user-bio"> 
+      
         {friends.length &&
-          friends.map((friend, index) => (
-            <div className='user-card' key={index}>
+           friends.map((friend, index) => (
+           
+              <div className='user-card' key={index}>
+               
               <img src={profilepic} alt='profilepic' className='profile-img' />
               <h4 key={index}>{friend.userName} </h4>
               <hr width='30%' />
@@ -144,15 +171,22 @@ export default function Friends({ user }) {
               })}
               {/* <h5>Practice Language: {friend.languages[1]?.name}</h5> */}
               <h6>Level: {friend.languages[0]?.level?.name}</h6>
-              <button
+              {/* <button
                 className='connect-btn'
                 onClick={() => callUser(friend._id)}
               >
                 Connect
-              </button>
-            </div>
-          ))}
-      </div>
+              </button> */}
+
+              <FaVideo className="video-icon" onClick={() => callUser(friend._id)}/>
+             </div>
+           ))}
+
+     </div>
+        </div>
+
+
+
     </div>
   );
 }

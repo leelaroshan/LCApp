@@ -52,6 +52,23 @@ return (
       </Link>
       </div>
       </div>
+
+
+
+      <div className="card"> 
+         <div className="card-div">
+            <h3> Namasthe</h3>
+
+     
+           <Link to= '/friends'>
+           <button className="readbtn">Hindi </button>
+           </Link>
+
+
+          </div>
+      </div>
+
+
       <div className="card"> 
       <div className="card-div">
       <h3 >Salve</h3>
@@ -69,33 +86,55 @@ return (
       </div>
         
       <div className="card">  
-      <div className="card-div">
-      <h3 >Bonjour</h3>
+       <div className="card-div">
+         <h3 >Bonjour</h3>
 
-      {/* <img  src="" 
-      width="200px" height="200px" 
-      alt="german"
-      className="card-img" />  */}
-
-     <Link to= '/friends'>
+         <Link to= '/friends'>
            <button className="readbtn">French </button>
-      </Link>
-      </div>
+        </Link>
+        </div>
       </div>
 
       <div className="card">  
-      <div className="card-div">
-      <h3 >Hola</h3>
+        <div className="card-div">
+        <h3 >Hola</h3>
 
-      {/* <img  src="" 
-      width="200px" height="200px" 
-      alt="german"
-      className="card-img" />  */}
+      
 
-     <Link to= '/friends'>
+         <Link to= '/friends'>
            <button className="readbtn">Spanish </button>
-      </Link>
+         </Link>
+       </div>
       </div>
+
+
+
+
+      <div className="card"> 
+         <div className="card-div">
+            <h3 >nî hâo</h3>
+
+     
+           <Link to= '/friends'>
+           <button className="readbtn">Chinese </button>
+           </Link>
+
+
+          </div>
+      </div>
+
+
+      <div className="card"> 
+         <div className="card-div">
+            <h3>Konnichiwa</h3>
+
+     
+           <Link to= '/friends'>
+           <button className="readbtn">Japannese </button>
+           </Link>
+
+
+          </div>
       </div>
        
        

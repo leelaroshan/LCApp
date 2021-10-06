@@ -7,6 +7,11 @@ import main from './images/main.png';
 
 
 
+
+
+
+
+
 export default function Home({ isLoggedIn }) {
     return (
      <div className="home-container">
