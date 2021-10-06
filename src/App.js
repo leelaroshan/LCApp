@@ -19,27 +19,12 @@ import { useHistory } from 'react-router';
 
 
 import Footer from './components/Footer';
-import { VideoCall } from '@material-ui/icons';
-// import { SettingsInputSvideoRounded } from '@material-ui/icons';
 
 
 function App() {
   const [token, setToken] = useState();
   const [user, setUser] = useState();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  const [stream, setStream] = useState();
-  const [receivingCall, setReceivingCall] = useState(false);
-  const [caller, setCaller] = useState('');
-  const [callerSignal, setCallerSignal] = useState();
-  const [callAccepted, setCallAccepted] = useState(false);
-  const [idToCall, setIdToCall] = useState('');
-  const [callEnded, setCallEnded] = useState(false);
-  const [name, setName] = useState('');
-
-  const myVideo = useRef();
-  const userVideo = useRef();
-  const connectionRef = useRef();
 
   let history = useHistory();
 
@@ -121,21 +106,6 @@ function App() {
             <Search setUser={setUser} user={user} />
           </Route>
 
-          {/* <Route path='/chat'>
-            <Chat
-              user={user}
-              socket={socket}
-              myVideo={myVideo}
-              userVideo={userVideo}
-              stream={stream}
-              leaveCall={leaveCall}
-              setStream={setStream}
-            />
-          </Route> */}
-
-          {/* <div class="receivingCall">
-           {receivingCall ?  (<NavLink to="/chat"><button onClick={answerCall}>Answer Call</button></NavLink> )  : "no call in progress"}
-        </div>  */}
         </Switch>
 
         <footer>
