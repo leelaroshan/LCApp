@@ -178,7 +178,7 @@ export default function Friends({ user }) {
                 return <h5 key={i}>Practice languages: {language.name}</h5>;
               })}
               {/* <h5>Practice Language: {friend.languages[1]?.name}</h5> */}
-              <h6>Level: {friend.languages[0]?.level?.name}</h6>
+              <h6>Level: {friend.languages[1]?.level?.name}</h6>
               {/* <button
                 className='connect-btn'
                 onClick={() => callUser(friend._id)}
