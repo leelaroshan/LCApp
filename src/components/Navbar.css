@@ -95,9 +95,13 @@
         width: 100%;
         transition: all 0.5s ease;
     }
-    .signup{
-        border:none;
-    }
+   
+
+    .signup,
+ .login {
+    border: none;
+    border-radius: 0px;
+}
     .mobile-menu-icon{
         display: block;
         position: absolute;
