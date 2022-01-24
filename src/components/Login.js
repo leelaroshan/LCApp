@@ -102,7 +102,7 @@ export default function Login({setUser,user, setToken, isLoggedIn, setIsLoggedIn
                   <Checkbox
                     // defaultChecked
                     // color="#5CE1E6"
-                    style={{ color: '#5CE1E6', marginLeft:'2vw'}}
+                    style={{ color: '#5CE1E6'}}
                   />
                 }
                 label="Remember Me"
@@ -124,9 +124,9 @@ export default function Login({setUser,user, setToken, isLoggedIn, setIsLoggedIn
               Log In
             </Button>
 
-            <Link to="/signup">
-              <p className="signup-link">Don't have an account Please Signup</p>
-            </Link>
+           
+              <p className="signup-link">Don't have an account Please   <Link to="/signup">Signup  </Link></p>
+     
           </div>
         </form>
       </div>

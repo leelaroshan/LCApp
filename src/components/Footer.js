@@ -39,8 +39,9 @@ export default function Footer() {
                <AiOutlineGithub className="github" />
                </Link>
    
-                
+              <Link to={{ pathname: "https://www.linkedin.com/in/leelavathi-gade/" }} target="_blank" >
               <BsLinkedin className="linkedin" />
+              </Link>
               
             </div>
    

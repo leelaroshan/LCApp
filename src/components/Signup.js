@@ -233,7 +233,7 @@ export default function Signup({ user,setUser, setIsLoggedIn }) {
           <FormGroup>
             <FormControlLabel
               control={
-                <Checkbox  style={{ color: '#5CE1E6 ', marginLeft:'2vw' }} />
+                <Checkbox  style={{ color: '#5CE1E6 ', marginRight:'2vw' }} />
               }
               label=" I agree to the terms and conditions"
             />
